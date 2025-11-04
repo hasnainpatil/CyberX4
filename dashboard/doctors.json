@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Dr. Emily Carter",
+        "specialty": "Cardiologist",
+        "phone": "+1-202-555-0187"
+    },
+    {
+        "name": "Dr. Benjamin Lee",
+        "specialty": "Neurologist",
+        "phone": "+1-202-555-0142"
+    },
+    {
+        "name": "Dr. Olivia Rodriguez",
+        "specialty": "Pediatrician",
+        "phone": "+1-202-555-0163"
+    },
+    {
+        "name": "Dr. Jackson Williams",
+        "specialty": "Orthopedic Surgeon",
+        "phone": "+1-202-555-0121"
+    },
+    {
+        "name": "Dr. Sophia Martinez",
+        "specialty": "Oncologist",
+        "phone": "+1-202-555-0199"
+    }
+]

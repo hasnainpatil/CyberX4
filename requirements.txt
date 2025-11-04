@@ -1,3 +1,5 @@
 requests
 faker
 pycryptodome
+Flask
+Flask-Cors

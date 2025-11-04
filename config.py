@@ -1,0 +1,1 @@
+DATABASE_URL = "https://cyberx4-942ae-default-rtdb.asia-southeast1.firebasedatabase.app/"

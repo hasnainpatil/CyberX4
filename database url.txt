@@ -1,3 +1,0 @@
-https://console.firebase.google.com/u/1/project/cyberx4-942ae/database/cyberx4-942ae-default-rtdb/data/~2F
-
-secret key- 3a48ce0c607344919aecb6390c30bd55

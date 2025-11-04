@@ -3,6 +3,10 @@
 # This script simulates an ambulance sending encrypted patient data
 # to a Firebase Realtime Database.
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import requests  # For sending HTTP requests to Firebase
 import json      # For formatting data as JSON
 import time      # For pausing between updates
@@ -12,6 +16,7 @@ import binascii  # For converting our hex key
 from Crypto.Cipher import AES # The core AES encryption library
 from Crypto.Random import get_random_bytes # For generating IV
 import base64    # For encoding encrypted data into a string
+from config import DATABASE_URL # Import the database URL from the config file
 
 from Crypto.Protocol.KDF import PBKDF2
 from Crypto.Hash import SHA256
@@ -167,14 +172,6 @@ def run_simulator(firebase_url, mode):
 if __name__ == "__main__":
     print("--- 🚑 Ambulance Data Simulator ---")
     
-    # Get Firebase URL from user
-    fb_url = input("Enter your Firebase Realtime Database URL: ").strip()
-    if not fb_url.endswith("/"):
-        fb_url += "/"
-    if not fb_url.startswith("https://"):
-        print("Warning: URL doesn't start with https://. Adding it.")
-        fb_url = "https://" + fb_url
-    
     # Get simulation mode from user
     print("\nSelect Simulation Mode:")
     print("  1: STABLE (Normal Vitals)")
@@ -191,7 +188,7 @@ if __name__ == "__main__":
     
     # Start the simulator
     try:
-        run_simulator(fb_url, selected_mode)
+        run_simulator(DATABASE_URL, selected_mode)
     except KeyboardInterrupt:
         print("\n--- Simulation stopped by user ---")
     except Exception as e:

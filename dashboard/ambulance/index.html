@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambulance Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <header class="bg-gray-800 p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold">Ambulance Dashboard</h1>
+        <button id="logout-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</button>
+    </header>
+
+    <main class="container mx-auto p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-lg font-bold mb-4">Start Simulation</h2>
+                <div class="mb-4">
+                    <label for="firebase-url" class="block mb-2">Firebase URL</label>
+                    <input type="text" id="firebase-url" class="w-full bg-gray-700 p-2 rounded" placeholder="Enter your Firebase URL">
+                </div>
+                <div class="mb-4">
+                    <label for="ambulance-id" class="block mb-2">Ambulance ID</label>
+                    <input type="text" id="ambulance-id" class="w-full bg-gray-700 p-2 rounded" placeholder="Enter Ambulance ID">
+                </div>
+                <div class="mb-4">
+                    <label for="mode" class="block mb-2">Mode</label>
+                    <select id="mode" class="w-full bg-gray-700 p-2 rounded">
+                        <option value="stable">Stable</option>
+                        <option value="urgent">Urgent</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+                <button id="start-simulation-btn" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Start Simulation</button>
+                <button id="stop-simulation-btn" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">Stop Simulation</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <h2 class="text-lg font-bold mb-4">Emergency Contacts</h2>
+                <ul id="doctors-list" class="space-y-2">
+                    <!-- Doctors will be dynamically inserted here -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script type="module" src="../assets/js/ambulance.js"></script>
+</body>
+</html>
