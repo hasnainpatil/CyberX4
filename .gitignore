@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.env
+*.pyo
+
+# VS Code/IDE/editor junk
+.vscode/
+.DS_Store
+
+# Node.js / frontend junk (in case someone works with npm)
+node_modules/
+dist/
+build/
+
+# Firebase secrets (DO NOT TRACK)
+firebase-credentials.json
+
+# General temp files
+*.log
+*.sqlite*
+*.bak
+*.swp
+
+# MacOS junk
+*.DS_Store
+
+# Optional: If you use a virtual environment, exclude it
+venv/
+.env/
