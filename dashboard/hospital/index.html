@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <header class="bg-gray-800 p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold">Live Triage Board</h1>
+        <button id="logout-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</button>
+    </header>
+
+    <main class="container mx-auto p-4">
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-gray-800 rounded-lg">
+                <thead>
+                    <tr class="border-b border-gray-700">
+                        <th class="p-4 text-left">Alert</th>
+                        <th class="p-4 text-left">Patient</th>
+                        <th class="p-4 text-left">Ambulance</th>
+                        <th class="p-4 text-left">Vitals (HR / SpO2 / BP)</th>
+                        <th class="p-4 text-left">Triage Status</th>
+                        <th class="p-4 text-left">Arrival Status</th>
+                        <th class="p-4 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="triage-board-body">
+                    <!-- Patient rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Vitals History Modal -->
+    <div id="vitals-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-3xl">
+            <h2 id="modal-patient-name" class="text-2xl font-bold mb-4">Patient Vitals History</h2>
+            <div class="h-96"><canvas id="vitals-chart"></canvas></div>
+            <button id="close-modal-btn" class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Close</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
